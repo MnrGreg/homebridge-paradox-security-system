@@ -4,7 +4,7 @@ This project is a [Homebridge](https://github.com/nfarina/homebridge) pluging th
 
 
 ## Notes
-- Usage of this plugin requires a Paradox Alarm Panel, the Paradox IP150 Module, an MQTT Broker [Mosquitto] (http://mosquitto.org) as well as the [Paradox IP150-MQTTv2 Monitor] (https://github.com/Tertiush/ParadoxIP150v2).
+- Usage of this plugin requires a Paradox Alarm Panel, the [Paradox IP150 Module] (http://www.paradox.com/Products/default.asp?PID=404), an MQTT Broker [Mosquitto] (http://mosquitto.org) as well as the [Paradox IP150-MQTTv2 Monitor] (https://github.com/Tertiush/ParadoxIP150v2).
 
 ## Installation
 
