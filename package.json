@@ -1,0 +1,32 @@
+{
+  "name": "homebridge-paradox-security-system",
+  "version": "1.0.0",
+  "description": "Homebridge iOS HomeKit Accessory plugin to control your Paradox Alarm System",
+  "main": "index.js",
+  "dependencies": {"mqtt": "^1.6.3"},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mnrgreg/homebridge-paradox-security-system.git"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "homebridge",
+    "paradox",
+    "security",
+    "alarm",
+    "homekit",
+    "Siri",
+    "iOS",
+    "IoT"
+  ],
+  "author": "Gregory May",
+  "license": "GPL2",
+  "bugs": {
+    "url": "https://github.com/mnrgreg/homebridge-paradox-security-system/issues"
+  },
+  "homepage": "https://github.com/mnrgreg/homebridge-paradox-security-system#readme"
+}
