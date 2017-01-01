@@ -1,6 +1,6 @@
 # homebridge-paradox-security-system
 
-This project is a [Homebridge](https://github.com/nfarina/homebridge) pluging that allows you to control your Paradox alarm system with the iOS 10 Home app as well as through Siri. This project uses the [Paradox IP150-MQTTv2 monitor](https://github.com/Tertiush/ParadoxIP150v2) made by [@TertiusH](https://github.com/Tertiush). To use this, you must have a working Homebridge server running in your network. The [Raspberry Pi](https://github.com/nfarina/homebridge/wiki/Running-HomeBridge-on-a-Raspberry-Pi) is ideal for this.
+This project is a [Homebridge](https://github.com/nfarina/homebridge) plugin that allows you to control your Paradox alarm system with the iOS 10 Home app as well as through Siri. This project uses the [Paradox IP150-MQTTv2 monitor](https://github.com/Tertiush/ParadoxIP150v2) made by [@TertiusH](https://github.com/Tertiush). To use this, you must have a working Homebridge server running in your network. The [Raspberry Pi](https://github.com/nfarina/homebridge/wiki/Running-HomeBridge-on-a-Raspberry-Pi) is ideal for this.
 
 
 ## Notes
