@@ -12,8 +12,8 @@ function ParadoxSecuritySystemAccessory(log, config) {
     this.name = config["name"];
     this.mqttserver = config["mqttserver"];
     this.topicname = config["topicname"];
-    //this.ArmPayload = config["arm-payload"];
 
+	// connect to MQTT broker connection settings
 	this.client_Id = 'mqttjs_' + Math.random().toString(16).substr(2, 8);
 	this.options = {
 	    keepalive: 10,
@@ -40,8 +40,10 @@ function ParadoxSecuritySystemAccessory(log, config) {
 	this.client.on('error', function () {
 		that.log('Error event on MQTT');
 	});
-    this.client.subscribe(this.topicname);
+    // set initial Alarm state to Off. Required only during initial startup.
+    that.readstate = Characteristic.SecuritySystemTargetState.DISARM;
 
+    this.client.subscribe(this.topicname);
     this.client.on('message', function (topic, message) {
         var status = message.toString(); 
         console.log("mqtt message received:", status);
@@ -56,7 +58,7 @@ function ParadoxSecuritySystemAccessory(log, config) {
                 status = Characteristic.SecuritySystemTargetState.DISARM;
                 break;
             case "Triggered":
-                status = Characteristic.SecuritySystemTargetState.TRIGGERED;
+                status = Characteristic.SecuritySystemTargetState.ALARM_TRIGGERED;
                 break;    
             default:
                 status = "Error - No State Match";
