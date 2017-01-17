@@ -45,5 +45,5 @@ Remember to configure the plugin in config.json in your home directory inside th
 
 If you like it please consider sending me some bitcoin this encourages me to build and share more. I'm also open to collaboration, so you can email me on [mrgregmay@gmail.com] (mailto:mrgregmay@gmail.com)
 
-![alt tag](https://github.com/MnrGreg/homebridge-paradox-security-system/bitcoindonation.png)<br>
+![alt tag](https://github.com/MnrGreg/homebridge-paradox-security-system/raw/master/bitcoindonation.png)<br>
 <strong>1JdLnWV9sY51A8soyLy8Edj4Te9q7PzCzc</strong>
