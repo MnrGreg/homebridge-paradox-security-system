@@ -1,23 +1,83 @@
 {
-  "name": "homebridge-paradox-security-system",
-  "version": "1.0.2",
-  "description": "Homebridge iOS HomeKit Accessory plugin to control your Paradox Alarm System",
-  "main": "index.js",
+  "_args": [
+    [
+      {
+        "raw": "homebridge-paradox-security-system",
+        "scope": null,
+        "escapedName": "homebridge-paradox-security-system",
+        "name": "homebridge-paradox-security-system",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/usr/lib/node_modules/homebridge"
+    ],
+    [
+      {
+        "raw": "homebridge-paradox-security-system",
+        "scope": null,
+        "escapedName": "homebridge-paradox-security-system",
+        "name": "homebridge-paradox-security-system",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/usr/lib/node_modules"
+    ]
+  ],
+  "_from": "homebridge-paradox-security-system",
+  "_id": "homebridge-paradox-security-system@1.2.0",
+  "_inCache": true,
+  "_location": "/homebridge-paradox-security-system",
+  "_nodeVersion": "6.9.4",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/homebridge-paradox-security-system-1.2.0.tgz_1485585826223_0.4364295054692775"
+  },
+  "_npmUser": {
+    "name": "mnrgreg",
+    "email": "mrgregmay@gmail.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "homebridge-paradox-security-system",
+    "scope": null,
+    "escapedName": "homebridge-paradox-security-system",
+    "name": "homebridge-paradox-security-system",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/homebridge-paradox-security-system/-/homebridge-paradox-security-system-1.2.0.tgz",
+  "_shasum": "0e7f8659005f50afbe84030316449c54022e301f",
+  "_shrinkwrap": null,
+  "_spec": "homebridge-paradox-security-system",
+  "_where": "/usr/lib/node_modules",
+  "author": {
+    "name": "Gregory May"
+  },
+  "bugs": {
+    "url": "https://github.com/mnrgreg/homebridge-paradox-security-system/issues"
+  },
   "dependencies": {
     "mqtt": "^1.6.3"
   },
-  "engines": {
-    "node": ">4.0.0",
-    "homebridge": ">=0.4.0"
-  },
+  "description": "Homebridge iOS HomeKit Accessory plugin to control your Paradox Alarm System",
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "directories": {},
+  "dist": {
+    "shasum": "0e7f8659005f50afbe84030316449c54022e301f",
+    "tarball": "https://registry.npmjs.org/homebridge-paradox-security-system/-/homebridge-paradox-security-system-1.2.0.tgz"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/mnrgreg/homebridge-paradox-security-system.git"
+  "engines": {
+    "homebridge": ">=0.4.0",
+    "node": ">4.0.0"
   },
+  "homepage": "https://github.com/mnrgreg/homebridge-paradox-security-system#readme",
   "keywords": [
     "homebridge-plugin",
     "homebridge",
@@ -27,12 +87,26 @@
     "homekit",
     "Siri",
     "iOS",
-    "IoT"
+    "IoT",
+    "IP150"
   ],
-  "author": "Gregory May",
   "license": "GPL2",
-  "bugs": {
-    "url": "https://github.com/mnrgreg/homebridge-paradox-security-system/issues"
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "mnrgreg",
+      "email": "mrgregma@gmail.com"
+    }
+  ],
+  "name": "homebridge-paradox-security-system",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mnrgreg/homebridge-paradox-security-system.git"
   },
-  "homepage": "https://github.com/mnrgreg/homebridge-paradox-security-system#readme"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.2.0"
 }

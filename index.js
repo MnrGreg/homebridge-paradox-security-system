@@ -11,7 +11,12 @@ function ParadoxSecuritySystemAccessory(log, config) {
     this.log = log;
     this.name = config["name"];
     this.mqttserver = config["mqttserver"];
-    this.topicname = config["topicname"];
+    this.controltopic = config["controltopic"];
+    this.statetopic = config["statetopic"];
+    this.armevent = config["armevent"];
+    this.stayevent = config["stayevent"];
+    this.disarmevent = config["disarmevent"];
+    this.triggeredevent = config["triggeredevent"];
 
 	// connect to MQTT broker connection settings
 	this.client_Id = 'mqttjs_' + Math.random().toString(16).substr(2, 8);
@@ -40,34 +45,36 @@ function ParadoxSecuritySystemAccessory(log, config) {
 	this.client.on('error', function () {
 		that.log('Error event on MQTT');
 	});
-    // set initial Alarm state to Off. Required only during initial startup.
-    that.readstate = Characteristic.SecuritySystemTargetState.DISARM;
 
-    this.client.subscribe(this.topicname);
+
+   self = this;
     this.client.on('message', function (topic, message) {
-        var status = message.toString(); 
-        console.log("mqtt message received:", status);
+        var status = message.toString();
+        console.log("mqtt Alarm State message received:", status);
         switch (status) {
-            case "Stay":
-                status = Characteristic.SecuritySystemTargetState.STAY_ARM;
+            case self.armevent:
+                status = Characteristic.SecuritySystemCurrentState.AWAY_ARM;
                 break;
-            case "Arm":
-                status = Characteristic.SecuritySystemTargetState.AWAY_ARM;
+            case self.stayevent:
+                status = Characteristic.SecuritySystemCurrentState.STAY_ARM;
                 break;
-            case "Disarm":
-                status = Characteristic.SecuritySystemTargetState.DISARM;
+            case self.disarmevent:
+                status = Characteristic.SecuritySystemCurrentState.DISARMED;
                 break;
-            case "Triggered":
-                status = Characteristic.SecuritySystemTargetState.ALARM_TRIGGERED;
-                break;    
+            case self.triggeredevent:
+                status = Characteristic.SecuritySystemCurrentState.ALARM_TRIGGERED;
+                break;
             default:
-                status = "Error - No State Match";
+                status = null;
                 break;
         };
-        that.readstate = status;
-        console.log("HomeKit converted state=", that.readstate);
+        if (status !== null){
+            self.readstate = status;
+            console.log("HomeKit received state=",self.readstate);
+            self.securityService.getCharacteristic(Characteristic.SecuritySystemCurrentState, self.readstate);
+        };
 	});
-
+    this.client.subscribe(this.statetopic);
 }
 
 ParadoxSecuritySystemAccessory.prototype = {
@@ -94,7 +101,7 @@ ParadoxSecuritySystemAccessory.prototype = {
                 break;
         };
          // MQTT Publish state   
-        this.client.publish(this.topicname, mqttstate);
+        this.client.publish(this.controltopic, mqttstate);
         self.securityService.setCharacteristic(Characteristic.SecuritySystemCurrentState, state);
         callback(null, state);
     },

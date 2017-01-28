@@ -13,7 +13,12 @@
             "mqttusername": "",
             "mqttpassword": "",
             "mqttserver": "mqtt://localhost",
-            "topicname": "Paradox/C/P1"
+            "controltopic": "Paradox/C/P1",
+	        "statetopic": "Paradox/Events",
+	        "stayevent": "Event:Non-reportable event;SubEvent:Arm in stay mode",
+	        "armevent": "Event:Partition status;SubEvent:Arm partition",
+	        "disarmevent": "Event:Partition status;SubEvent:Disarm partition",
+	        "triggeredevent": ""
         }
     ]
 }

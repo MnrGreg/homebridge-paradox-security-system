@@ -11,12 +11,11 @@ This project is a [Homebridge](https://github.com/nfarina/homebridge) plugin tha
     npm install -g homebridge-paradox-security-system
 
 ##  To Do
-- Add delay during setting of TargetState to allow for Paradox alarm processing
-- On receiving mqtt message, perform immediate CurrentState check. Currently CurrentState is only checked when opening the Home App.
-- Investigate HomeKit SecuritySystem [Triggered State] (https://developer.apple.com/reference/homekit/hmcharacteristicvaluecurrentsecuritysystemstate)
-- Add HomeKit/Paradox Alarm State mapping to config.json (eg HomeKit:Away == Paradox:Arm)
 - HELP NEEDED: Create new branch for: monitoring opening & closing of doors/zones (HomeKit ContactSensor Accessory)
 - HELP NEEDED: Create new branch for: monitoring of motion detectors & beams (HomeKit MotionDetected Accessory)
+
+## Updates
+- Alarm State is now read directly from Paradox/Events payloads. 
 
 ## Configuration
 Remember to configure the plugin in config.json in your home directory inside the .homebridge directory. Configuration parameters:
@@ -31,12 +30,17 @@ Remember to configure the plugin in config.json in your home directory inside th
 
         "accessories": [
             {
-                "accessory": "Homebridge-Paradox",
-                "name": "Alarm System",
-                "mqttserver": "mqtt://localhost",
-                "mqttusername": "",
-                "mqttpassword": "",
-                "topicname": "Paradox/C/P1"
+            "accessory": "Homebridge-Paradox",
+            "name": "Alarm System",
+            "mqttusername": "",
+            "mqttpassword": "",
+            "mqttserver": "mqtt://localhost",
+            "controltopic": "Paradox/C/P1",
+            "statetopic": "Paradox/Events",
+            "stayevent": "Event:Non-reportable event;SubEvent:Arm in stay mode",
+            "armevent": "Event:Partition status;SubEvent:Arm partition",
+            "disarmevent": "Event:Partition status;SubEvent:Disarm partition",
+            "triggeredevent": ""
             }
         ]
     }
