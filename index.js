@@ -46,6 +46,10 @@ function ParadoxSecuritySystemAccessory(log, config) {
 		that.log('Error event on MQTT');
 	});
 
+    // Set initial Alarm State to disarmed
+    console.log("Setting initial HomeKit state to DISARMED");
+    that.readstate = Characteristic.SecuritySystemCurrentState.DISARMED;
+
 
    self = this;
     this.client.on('message', function (topic, message) {
@@ -89,7 +93,7 @@ ParadoxSecuritySystemAccessory.prototype = {
                 break;
             case Characteristic.SecuritySystemTargetState.NIGHT_ARM:
                 // stayArm = 2
-                mqttstate = "Sleep";
+                mqttstate = "Stay";
                 break;
             case Characteristic.SecuritySystemTargetState.AWAY_ARM:
                 // stayArm = 1
