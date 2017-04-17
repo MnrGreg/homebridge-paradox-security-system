@@ -16,8 +16,8 @@ function ParadoxSecuritySystemAccessory(log, config) {
     this.armevent = config["armevent"];
     this.stayevent = config["stayevent"];
     this.nightevent = config["nightevent"]  || "Event:Non-reportable event;SubEvent:Arm in sleep mode";
-    this.disarmevent = config["disarmevent"];
-    this.triggeredevent = config["triggeredevent"];
+    this.disarmevent = config["disarmevent"] || "Event:Partition status;SubEvent:Disarm partition";
+    this.triggeredevent = config["triggeredevent"] || "Event:Zone in alarm";
 
 	// connect to MQTT broker connection settings
 	this.client_Id = 'mqttjs_' + Math.random().toString(16).substr(2, 8);
