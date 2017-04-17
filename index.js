@@ -15,6 +15,7 @@ function ParadoxSecuritySystemAccessory(log, config) {
     this.statetopic = config["statetopic"];
     this.armevent = config["armevent"];
     this.stayevent = config["stayevent"];
+    this.nightevent = config["nightevent"]  || "Event:Non-reportable event;SubEvent:Arm in sleep mode";
     this.disarmevent = config["disarmevent"];
     this.triggeredevent = config["triggeredevent"];
 
@@ -61,6 +62,9 @@ function ParadoxSecuritySystemAccessory(log, config) {
                 break;
             case self.stayevent:
                 status = Characteristic.SecuritySystemCurrentState.STAY_ARM;
+                break;
+            case self.nightevent:
+                status = Characteristic.SecuritySystemCurrentState.NIGHT_ARM;
                 break;
             case self.disarmevent:
                 status = Characteristic.SecuritySystemCurrentState.DISARMED;
