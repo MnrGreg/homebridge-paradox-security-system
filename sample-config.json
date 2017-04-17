@@ -5,20 +5,20 @@
         "port": 51826,
         "pin": "031-45-154"
     },
-
-    "accessories": [
+   "accessories": [
         {
-            "accessory": "Homebridge-Paradox",
-            "name": "Alarm System",
-            "mqttusername": "",
-            "mqttpassword": "",
-            "mqttserver": "mqtt://localhost",
-            "controltopic": "Paradox/C/P1",
-	        "statetopic": "Paradox/Events",
-	        "stayevent": "Event:Non-reportable event;SubEvent:Arm in stay mode",
-	        "armevent": "Event:Partition status;SubEvent:Arm partition",
-	        "disarmevent": "Event:Partition status;SubEvent:Disarm partition",
-	        "triggeredevent": ""
+        "accessory": "Homebridge-Paradox",
+        "name": "Alarm System",
+        "mqttusername": "",
+        "mqttpassword": "",
+        "mqttserver": "mqtt://localhost",
+        "controltopic": "Paradox/C/P1",
+        "statetopic": "Paradox/Events",
+        "nightevent": "Event:Non-reportable event;SubEvent:Arm in sleep mode",
+        "stayevent": "Event:Non-reportable event;SubEvent:Arm in stay mode",
+        "armevent": "Event:Partition status;SubEvent:Arm partition",
+        "disarmevent": "Event:Partition status;SubEvent:Disarm partition",
+        "triggeredevent": "Event:Zone in alarm"
         }
-    ]
+    ],
 }
