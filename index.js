@@ -15,8 +15,9 @@ function ParadoxSecuritySystemAccessory(log, config) {
     this.statetopic = config["statetopic"];
     this.armevent = config["armevent"];
     this.stayevent = config["stayevent"];
-    this.disarmevent = config["disarmevent"];
-    this.triggeredevent = config["triggeredevent"];
+    this.nightevent = config["nightevent"]  || "Event:Non-reportable event;SubEvent:Arm in sleep mode";
+    this.disarmevent = config["disarmevent"] || "Event:Partition status;SubEvent:Disarm partition";
+    this.triggeredevent = config["triggeredevent"] || "Event:Zone in alarm";
 
 	// connect to MQTT broker connection settings
 	this.client_Id = 'mqttjs_' + Math.random().toString(16).substr(2, 8);
@@ -61,6 +62,9 @@ function ParadoxSecuritySystemAccessory(log, config) {
                 break;
             case self.stayevent:
                 status = Characteristic.SecuritySystemCurrentState.STAY_ARM;
+                break;
+            case self.nightevent:
+                status = Characteristic.SecuritySystemCurrentState.NIGHT_ARM;
                 break;
             case self.disarmevent:
                 status = Characteristic.SecuritySystemCurrentState.DISARMED;
