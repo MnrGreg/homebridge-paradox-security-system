@@ -5,6 +5,7 @@
         "port": 51826,
         "pin": "031-45-154"
     },
+    
    "accessories": [
         {
         "accessory": "Homebridge-Paradox",
